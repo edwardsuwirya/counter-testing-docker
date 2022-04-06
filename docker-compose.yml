@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  be-mockoon:
+    image: mockoon/cli
+    ports:
+      - "3005:3005"
+    volumes:
+      - /home/edo/counter/counter_be.json:/data:ro
+    command: -d data
+  fe:
+    image: counter:latest
+    build:
+      context: ./counter-testing
+      dockerfile: dockerfile
+    ports:
+      - "80:80"
+    restart:
+       always

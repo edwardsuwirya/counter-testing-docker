@@ -1,0 +1,148 @@
+{
+  "uuid": "94614167-ad33-4e0f-a48e-24e62f4e08ba",
+  "lastMigration": 19,
+  "name": "Counter",
+  "endpointPrefix": "counter",
+  "latency": 0,
+  "port": 3005,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "3ad7fd7a-0772-42d2-99f5-c15dd9de42ef",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "increment",
+      "responses": [
+        {
+          "uuid": "479cf8ed-1731-48ed-a646-8dc2aa43cb37",
+          "body": "{\n  \"result\":1\n}",
+          "latency": 2000,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "num",
+              "value": "0",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "56f5d45a-8eef-4dca-84f6-2025016def65",
+          "body": "{\n  \"result\":4\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "num",
+              "value": "3",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "27b3ba19-6cca-432c-9707-3c5a60e2eebf",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "decrement",
+      "responses": [
+        {
+          "uuid": "f51abb5a-3a17-4b37-ad7b-0ae45323d261",
+          "body": "{\n  \"result\":-1\n}",
+          "latency": 3000,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "num",
+              "value": "0",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "5cb8b25c-ea26-498a-b23b-31e80d85e557",
+          "body": "{\n  \"result\":0\n}",
+          "latency": 3000,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "num",
+              "value": "1",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  }
+}
