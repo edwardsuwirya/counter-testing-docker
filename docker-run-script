@@ -1,1 +1,5 @@
+# To Run standalone mockoon cli
 docker run -d --mount type=bind,source=/home/edo/counter/counter_be.json,target=/data,readonly -p 3005:3005 mockoon/cli:latest -d data
+
+# Run your app
+docker-compose -d up --build
