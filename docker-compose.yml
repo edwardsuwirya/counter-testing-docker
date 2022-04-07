@@ -1,13 +1,15 @@
 version: '3.7'
 services:
   be-mockoon:
+    container_name: counter-be
     image: mockoon/cli
     ports:
       - "3005:3005"
     volumes:
-      - /home/edo/counter/counter_be.json:/data:ro
+      - ${COUNTER_VOL}/counter_be.json:/data:ro
     command: -d data
   fe:
+    container_name: counter-fe
     image: counter:latest
     build:
       context: ./counter-testing
